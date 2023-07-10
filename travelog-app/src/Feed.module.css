@@ -1,0 +1,11 @@
+.loadingIndicator {
+    text-align: center;
+}
+
+.feed {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+}

@@ -1,0 +1,62 @@
+:root {
+  --color-primary-deg: 142deg;
+
+  --color-primary: hsl(var(--color-primary-deg) 57% 62%);
+  --color-secondary: hsl(174deg 57% 10%);
+  --color-accent: hsl(172deg 57% 42%);
+  --color-surface: hsl(0deg 0% 0% / 0.1);
+
+  --color-text: hsl(0deg 0% 0% / 0.6);
+  --color-text-accent: black;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-surface: hsl(0deg 100% 100% / 0.1);
+    --color-text: hsl(0deg 100% 100% / 0.6);
+    --color-text-accent: white;
+  }
+}
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color-scheme: light dark;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--color-text);
+}
+
+h1 {
+  font-size: 2rem;
+  color: var(--color-text-accent);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button, input {
+  appearance: none;
+  font-family: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+main {
+  width: min(70ch, 100% - 6rem);
+  margin-inline: auto;
+}
