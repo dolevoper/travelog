@@ -1,11 +1,6 @@
-import Feed from "./Feed";
-
 function App() {
   return (
-    <main>
-      <h1>Travelog</h1>
-      <Feed />
-    </main>
+    <div>Hello world!</div>
   )
 }
 
