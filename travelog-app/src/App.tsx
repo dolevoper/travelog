@@ -1,6 +1,15 @@
+import Feed from "./Feed";
+
 function App() {
   return (
-    <div>Hello world!</div>
+    <>
+    <header>
+      <h1>Travelog</h1>
+    </header>
+    <main>
+      <Feed />
+    </main>
+    </>
   )
 }
 

@@ -1,0 +1,17 @@
+.logEntry {
+    display: flex;
+}
+
+.logEntry img, .logEntry .details {
+    flex: 1;
+}
+
+.logEntry img {
+    min-width: 0;
+    object-fit: cover;
+    aspect-ratio: 1;
+}
+
+.logEntry .details {
+    padding: 0.5rem 1rem;
+}
