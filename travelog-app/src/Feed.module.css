@@ -15,6 +15,17 @@
     flex-direction: column;
     gap: 0.5rem;
     margin-block-start: 2rem;
+    max-height: 4rem;
+    overflow: hidden;
+    transition: max-height 600ms;
+}
+
+.form:focus-within {
+    max-height: 100vh;
+}
+
+.form>* {
+    flex-shrink: 0;
 }
 
 .form h2 {
@@ -49,6 +60,7 @@
     text-transform: uppercase;
     font-weight: 600;
 }
+
 .imageSection {
     display: grid;
     grid-template-columns: auto 1fr;
