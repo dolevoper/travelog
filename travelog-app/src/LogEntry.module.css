@@ -23,12 +23,6 @@
     padding: 0.5rem 1rem;
 }
 
-.logEntry .details h2 {
-    color: var(--color-text-accent);
-    font-weight: 600;
-    font-size: 1.2rem;
-}
-
 @media (width < 100ch) {
     .logEntry {
         flex-direction: column;
