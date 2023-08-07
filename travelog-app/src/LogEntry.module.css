@@ -4,6 +4,9 @@
     background: var(--color-surface);
 }
 
+.logEntry.pending {
+    opacity: 0.3;
+}
 .logEntry img,
 .logEntry .details {
     flex: 1;

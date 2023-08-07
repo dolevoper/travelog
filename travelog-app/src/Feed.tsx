@@ -14,7 +14,7 @@ function Feed() {
 
             const previousFeed = queryClient.getQueryData(["feed"]);
 
-            queryClient.setQueryData<LogEntryProps[]>(["feed"], (old) => [...(old ?? []), { ...newLogEntry, author: "dolevoper", date: new Date() }]);
+            queryClient.setQueryData<LogEntryProps[]>(["feed"], (old) => [{ ...newLogEntry, author: "dolevoper", date: new Date() }, ...(old ?? [])]);
 
             return { previousFeed };
         },
@@ -47,13 +47,21 @@ function Feed() {
                     image,
                     imageAlt
                 });
+
+                setTitle("");
+                setContent("");
+                setImage("");
+                setImageAlt("");
             }}>
                 <h2>Tell us about your latest travel</h2>
-                <input type="text" placeholder="Title" value={title} onChange={(e) => setTitle(e.target.value)} />
-                <textarea value={content} onChange={(e) => setContent(e.target.value)} rows={rows}></textarea>
-                <input type="text" placeholder="Image URL" value={image} onChange={(e) => setImage(e.target.value)} />
-                <input type="text" placeholder="Image alt" value={imageAlt} onChange={(e) => setImageAlt(e.target.value)} />
-                <button type="submit">Post</button>
+                <input type="text" placeholder="Title" value={title} onChange={(e) => setTitle(e.target.value)} disabled={logEntry.isLoading} />
+                <textarea value={content} onChange={(e) => setContent(e.target.value)} rows={rows} disabled={logEntry.isLoading}></textarea>
+                <div className={classes.imageSection}>
+                    <img src={image || "https://placehold.co/200?text=Preview"} alt={imageAlt} />
+                    <input type="text" placeholder="Image URL" value={image} onChange={(e) => setImage(e.target.value)} disabled={logEntry.isLoading} />
+                    <input type="text" placeholder="Image alt" value={imageAlt} onChange={(e) => setImageAlt(e.target.value)} disabled={logEntry.isLoading} />
+                </div>
+                <button type="submit" disabled={logEntry.isLoading}>Post</button>
             </form>
             <div className={classes.loadingIndicator} style={{ visibility: isFetching ? "visible" : "hidden" }}>Loading...</div>
             {data && <ol className={classes.feed}>

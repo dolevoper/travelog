@@ -49,3 +49,16 @@
     text-transform: uppercase;
     font-weight: 600;
 }
+.imageSection {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    align-items: start;
+}
+
+.imageSection img {
+    grid-row: span 2;
+    width: 200px;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
