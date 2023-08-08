@@ -9,3 +9,68 @@
     list-style: none;
     padding: 0;
 }
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-block-start: 2rem;
+    max-height: 4rem;
+    overflow: hidden;
+    transition: max-height 600ms;
+}
+
+.form:focus-within {
+    max-height: 100vh;
+}
+
+.form>* {
+    flex-shrink: 0;
+}
+
+.form h2 {
+    color: var(--color-accent);
+    line-height: 1.1;
+}
+
+.form input,
+.form textarea {
+    border: none;
+    background: transparent;
+    border-bottom: 2px solid var(--color-text);
+    resize: none;
+    overflow: hidden;
+}
+
+.form input:focus-visible,
+.form textarea:focus-visible {
+    border-color: var(--color-primary);
+    outline: none;
+}
+
+.form button {
+    --padding-block: 0.5rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    background: var(--color-primary);
+    border: none;
+    padding: var(--padding-block) 1rem;
+    line-height: 1;
+    border-radius: calc(1em + 2 * var(--padding-block));
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.imageSection {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    align-items: start;
+}
+
+.imageSection img {
+    grid-row: span 2;
+    width: 200px;
+    aspect-ratio: 1;
+    object-fit: cover;
+}

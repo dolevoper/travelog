@@ -34,9 +34,22 @@ body {
   color: var(--color-text);
 }
 
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-text-accent);
+}
 h1 {
   font-size: 2rem;
-  color: var(--color-text-accent);
+  color: var(--color-primary);
+  }
+  
+  h2 {
+    color: var(--color-accent);
 }
 
 img {
@@ -47,4 +60,12 @@ img {
 main {
   width: min(70ch, 100% - 6rem);
   margin-inline: auto;
+}
+
+input,
+textarea,
+button {
+  appearance: none;
+  font-size: inherit;
+  font-family: inherit;
 }
