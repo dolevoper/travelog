@@ -2,7 +2,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { LogEntryProps } from "./LogEntry"
 import * as travelogClient from "./travelogClient";
 import classes from "./Feed.module.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 function NewPost() {
     const queryClient = useQueryClient();
@@ -26,14 +26,10 @@ function NewPost() {
     });
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
-    const [rows, setRows] = useState(0);
     const [image, setImage] = useState("");
     const [imageAlt, setImageAlt] = useState("");
 
-    useEffect(() => {
-        console.log("hello", content, content.match(/\n/g));
-        setRows(content.match(/\n/g)?.length ?? 0);
-    }, [content]);
+    const rows = (content.match(/\n/g)?.length ?? 0) + 1;
 
     return (
         <form className={classes.form} onSubmit={(e) => {
